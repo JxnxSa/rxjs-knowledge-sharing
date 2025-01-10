@@ -1,11 +1,8 @@
-<div class="container">
-  <button class="btn btn-success">map & pipe</button>
-  <button class="btn btn-success">interval & repeat</button>
-  <button class="btn btn-success">concat & merge</button>
-  <button class="btn btn-success">observable</button>
-
-  <app-rxjs-map></app-rxjs-map>
-  <app-rxjs-interval-repeat></app-rxjs-interval-repeat>
-  <app-rxjs-concat-merge></app-rxjs-concat-merge>
-  <app-rxjs-observable></app-rxjs-observable>
+<div class="container pt-3">
+  <button class="btn btn-success m-2" routerLink="/map">map</button>
+  <button class="btn btn-success m-2" routerLink="/interval-repeat">interval & repeat</button>
+  <button class="btn btn-success m-2" routerLink="/concat-merge">concat & merge</button>
+  <button class="btn btn-success m-2" routerLink="/observable">observable</button>
+  <button class="btn btn-success m-2" routerLink="/clock">clock</button>
 </div>
+<router-outlet></router-outlet>

@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="container text-center mt-5">
+        <div class="time-display mb-3">
+          <h2 class="display-4">{{ formattedTime }}</h2>
+        </div>
+        <button class="btn btn-primary" (click)="toggleClock()">
+          {{ isRunning ? 'หยุด' : 'เริ่ม' }}
+        </button>
+    </div>
+</div>

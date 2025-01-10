@@ -1,1 +1,26 @@
-<p>rxjs-observable works!</p>
+
+<div class="container">
+    <h1>Rxjs Observable</h1>
+    <div class="mb-3">
+      <input type="text" [(ngModel)]="inputKey" placeholder="Enter currency key" class="form-control" />
+      <button (click)="getExchangeRate()" class="btn btn-primary mt-2">Get Exchange Rate</button>
+    </div>
+    <div *ngIf="currencies">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Currency</th>
+            <th>Currency Name</th>
+            <th>Exchange Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let currency of currencies | keyvalue">
+            <td>{{ currency.key }}</td>
+            <td>{{ currency.value }}</td>
+            <td>{{ exchangeRates[currency.key] || '-' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
