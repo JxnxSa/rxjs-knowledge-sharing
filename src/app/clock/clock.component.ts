@@ -5,7 +5,7 @@ import { map, repeat } from 'rxjs/operators';
 @Component({
   selector: 'app-clock',
   templateUrl: './clock.component.html',
-  styleUrl: './clock.component.css'
+  styleUrl: './clock.component.css',
 })
 export class ClockComponent {
   timeInSeconds: number = 0;
@@ -18,16 +18,16 @@ export class ClockComponent {
   }
 
   startClock(): void {
-    this.subscription = interval(1000) // นับวินาทีทุกๆ 1 วินาที
+    this.subscription = interval(500) // นับวินาทีทุกๆ 1 วินาที
       .pipe(
         map(() => this.timeInSeconds++), // เพิ่มเวลาทุกๆ 1 วินาที
         map((timeInSeconds) => {
           if (timeInSeconds >= 60) {
             this.timeInSeconds = 0;
+            this.toggleClock();
           }
           return this.formatTime(timeInSeconds); // แปลงเวลาเป็น MM:SS
         }),
-        repeat() // นับวนซ้ำไปเรื่อยๆ
       )
       .subscribe((formattedTime) => {
         this.formattedTime = formattedTime; // อัปเดตเวลาแสดงผล
